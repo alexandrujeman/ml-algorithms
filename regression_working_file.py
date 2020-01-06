@@ -22,7 +22,7 @@ y = np.array(data[predict])
 
 # Split data and leave 10% for tests
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
-
+"""
 # Create linear regression model
 linear = linear_model.LinearRegression()
 
@@ -31,7 +31,7 @@ linear.fit(x_train, y_train)
 # Save/Load trained model on file
 with open("predictionmodel.pickle", "wb") as f:
     pickle.dump(linear, f)
-
+"""
 pickle_in = open("predictionmodel.pickle", "rb")
 linear = pickle.load(pickle_in)
 
