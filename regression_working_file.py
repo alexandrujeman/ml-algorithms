@@ -5,12 +5,14 @@ import numpy as np
 import sklearn
 from sklearn import linear_model
 from sklearn.utils import shuffle
+import matplotlib.pyplot as pyplot
+import pickle
+from matplotlib import style
 
 data = pd.read_csv("student-mat.csv", sep=";")
 
 # From data file get only the following columns
-data = data[["G1", "G2", "G3", "studytime", "failures", "absences", "age", "traveltime", "goout", "health", "Walc"]]
-
+data = data[["G1", "G2", "G3", "studytime", "failures", "absences", "age", "traveltime", "goout", "health", "Dalc" ,"Walc", "Medu", "Fedu", "famrel"]]
 # What are we trying to predict
 predict = "G3"
 
@@ -29,3 +31,9 @@ acc = linear.score(x_test, y_test)
 
 # Print result
 print(acc)
+
+# Output predictions on test data after model was trained
+predictions = linear.predict(x_test)
+
+for x in range(len(predictions)):
+    print(predictions[x], x_test[x], y_test[x])
