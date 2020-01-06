@@ -23,7 +23,7 @@ predict = "G3"
 x = np.array(data.drop([predict], 1))
 y = np.array(data[predict])
 
-# Split data and leave 10% for tests
+# Split data 90% training/10% test
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
 """
 # Create linear regression model
