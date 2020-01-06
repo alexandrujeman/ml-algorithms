@@ -25,24 +25,26 @@ y = np.array(data[predict])
 
 # Split data 90% training/10% test
 x_train, x_test, y_train, y_test = sklearn.model_selection.train_test_split(x, y, test_size=0.1)
-"""
+
 # Create linear regression model
 linear = linear_model.LinearRegression()
 
-linear.fit(x_train, y_train)
-
-# Save/Load trained model on file
-with open("predictionmodel.pickle", "wb") as f:
-    pickle.dump(linear, f)
-"""
+# Load model
 pickle_in = open("predictionmodel.pickle", "rb")
 linear = pickle.load(pickle_in)
+
+# Train model
+linear.fit(x_train, y_train)
+
+# Save trained model on file
+with open("predictionmodel.pickle", "wb") as f:
+    pickle.dump(linear, f)
 
 # Print accuracy result
 accuracy = linear.score(x_test, y_test)
 print(accuracy)
 
-# Output predictions
+# Output predictions in console
 predictions = linear.predict(x_test)
 
 for x in range(len(predictions)):
