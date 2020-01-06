@@ -44,3 +44,10 @@ predictions = linear.predict(x_test)
 
 for x in range(len(predictions)):
     print(predictions[x], x_test[x], y_test[x])
+
+p = "traveltime"
+style.use("ggplot")
+pyplot.scatter(data[p], data["G3"])
+pyplot.xlabel(p)
+pyplot.ylabel("Final grade")
+pyplot.show()
