@@ -1,20 +1,21 @@
-import tensorflow
-import keras
+"""
+Linear Regression
+"""
+import pickle
 import pandas as pd
 import numpy as np
 import sklearn
 from sklearn import linear_model
 from sklearn.utils import shuffle
 import matplotlib.pyplot as pyplot
-import pickle
 from matplotlib import style
 
-# data = pd.read_csv("student-mat.csv", sep=";")
-
-data = pd.read_csv("linear-regression/student-mat.csv", sep=";")
+data = pd.read_csv("student-mat.csv", sep=";")
 
 # From data file get only the following columns
-data = data[["G1", "G2", "G3", "studytime", "failures", "absences", "age", "traveltime", "goout", "health", "Dalc" ,"Walc", "Medu", "Fedu", "famrel"]]
+data = data[
+    ["G1", "G2", "G3", "studytime", "failures", "absences", "age", "traveltime", "goout", "health", "Dalc", "Walc",
+     "Medu", "Fedu", "famrel"]]
 # What are we trying to predict
 predict = "G3"
 
@@ -31,10 +32,10 @@ linear = linear_model.LinearRegression()
 linear.fit(x_train, y_train)
 
 # Save/Load trained model on file
-with open("linear-regression/predictionmodel.pickle", "wb") as f:
+with open("predictionmodel.pickle", "wb") as f:
     pickle.dump(linear, f)
 """
-pickle_in = open("linear-regression/predictionmodel.pickle", "rb")
+pickle_in = open("predictionmodel.pickle", "rb")
 linear = pickle.load(pickle_in)
 
 # Print accuracy result
