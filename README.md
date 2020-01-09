@@ -1,4 +1,4 @@
-# Collection of ML Algorithms (py-tensorflow-keras)
+# Collection of ML Algorithms
 
 ### 1. [Linear Regression](https://github.com/alexandrujeman/ml-algorithms/tree/master/linear-regression)
 
