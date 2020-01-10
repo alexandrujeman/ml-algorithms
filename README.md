@@ -8,7 +8,8 @@ Figure shows student grades in correlation with time spent to get to school, col
 
 Legend  
 1.0 - 15 minutes  
-4.0 - 1 hour or more
+4.0 - 1 hour or more  
+  
 ![Figure](https://i.imgur.com/SmgDJaA.png)
 
 ### 2. [K-Nearest Neighbors](https://github.com/alexandrujeman/ml-algorithms/tree/master/k-nearest-neighbors)
